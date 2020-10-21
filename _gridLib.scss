@@ -1,0 +1,14 @@
+/*SET GRID LAYOUT*/
+@mixin setGridLayout($rows: 1 ,$columns: 1,$sizeR: 1fr,$sizeC: 1fr,$gap: 1px){
+    $Rows: [x0];
+    @for $i from 0 to $rows {
+       $Rows: $Rows $sizeR [x+($i+1)];
+    }
+    $Columns: [y0];
+    @for $i from 0 to $columns {
+       $Columns: $Columns $sizeC [y+($i+1)];
+    }
+    grid-template-rows: $Rows;
+    grid-template-columns: $Columns;
+    grid-gap: $gap;
+}
